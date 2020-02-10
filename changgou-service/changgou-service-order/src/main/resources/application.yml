@@ -1,0 +1,53 @@
+server:
+  port: 18089
+
+spring:
+  application:
+    name: order
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.211.132:3306/changgou_order?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    username: root
+    password: 123456
+  redis:
+    host: 192.168.211.132
+    port: 6379
+  main:
+    allow-bean-definition-overriding: true  # 当遇到同样名字的时候，是否允许覆盖注册
+  # RabbitMQ地址
+  rabbitmq:
+    host: 192.168.211.132
+    port: 5672
+    username: guest
+    password: guest
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:7001/eureka
+  instance:
+    prefer-ip-address: true
+
+
+# 开启Feign的熔断：默认是线程池隔离
+feign:
+  hystrix:
+    enabled: true
+
+#hystrix 配置
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          strategy: SEMAPHORE  # hystrix隔离策略替换为信号量隔离
+
+#位置支付交换机和队列（工作中要到MQ后台去创建，不然会报错）
+mq:
+  pay:
+    exchange:
+      order: exchange.order  # 发给哪个交换机
+    queue:
+      order: queue.order  # 发给哪个队列
+    routing:
+      key: queue.order

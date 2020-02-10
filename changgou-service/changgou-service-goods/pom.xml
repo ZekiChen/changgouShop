@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>changgou-service</artifactId>
+        <groupId>com.changgou</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <description>商品微服务工程：changgou_goods数据库的管理</description>
+    <artifactId>changgou-service-goods</artifactId>
+
+    <!--依赖-->
+    <dependencies>
+        <dependency>
+            <groupId>com.changgou</groupId>
+            <artifactId>changgou-service-goods-api</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <!-- 谁需要令牌解析，谁就需要引入这个OAuth2.0认证包 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-oauth2</artifactId>
+        </dependency>
+    </dependencies>
+
+</project>

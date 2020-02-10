@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>changgou-web</artifactId>
+        <groupId>com.changgou</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <description>
+        搜索微服务页面渲染工程，提问：为什么搜索页面不做成前后端分离呢？
+        如果做成前后端分离，有可能会出现搜索引擎抓取你页面的时候，标签数据没法填充，显示{{text}}，造成一种很不友好的现象
+    </description>
+    <artifactId>changgou-web-search</artifactId>
+
+    <dependencies>
+        <!--依赖search api-->
+        <dependency>
+            <groupId>com.changgou</groupId>
+            <artifactId>changgou-service-search-api</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
+</project>
